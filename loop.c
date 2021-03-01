@@ -9,32 +9,43 @@
 
 int main()
 {
-
-    char grade = 'p';
-    switch (grade)
+    int j = 0;
+    while (j > 4)
+        ;
     {
-    case 'A':
-        printf("Super");
-        break;
-
-    case 'B':
-        printf("Good");
-        break;
-
-    case 'C':
-        printf("You could do better");
-        break;
-
-    case 'D':
-        printf("you love the D");
-        break;
-
-    default:
-        printf("Please check your grades");
+        printf("%d\n", j);
+        j++;
     }
-
-    return 0;
 }
+
+// int main()
+// {
+
+//     char grade = 'p';
+//     switch (grade)
+//     {
+//     case 'A':
+//         printf("Super");
+//         break;
+
+//     case 'B':
+//         printf("Good");
+//         break;
+
+//     case 'C':
+//         printf("You could do better");
+//         break;
+
+//     case 'D':
+//         printf("you love the D");
+//         break;
+
+//     default:
+//         printf("Please check your grades");
+//     }
+
+//     return 0;
+// }
 
 // // For LOOP
 // int main()

@@ -21,15 +21,16 @@ int main()
     printf("Enter House rent. \n");
     scanf("%d", &house_price);
 
-    house_dep = house_price;
-    total_rent = house_dep + WATER_DEP + ELECT_DEP;
+    // house_dep = house_price;s
+    // total_rent = house_dep + WATER_DEP + ELECT_DEP;
 
     // MAKING COMPARISON
     if (strcmp(house_location, "JAMHURI") == 0 && strcmp(house_type, "SINGLE") == 0)
     {
         //Assigning
-
-        strcpy(house_name, "Valley");
+        house_dep = house_price;
+        total_rent = house_dep + WATER_DEP + ELECT_DEP;
+        strcpy(house_name, "Impala estate");
         strcpy(house_owner, "Peter");
 
         printf("\n\n______________________________________\n\n");
@@ -44,8 +45,9 @@ int main()
     }
     else if (strcmp(house_location, "KAREN") == 0 && strcmp(house_type, "DOUBLE") == 0)
     {
-
-        strcpy(house_name, "Main House");
+        house_dep = house_price;
+        total_rent = house_dep + WATER_DEP + ELECT_DEP;
+        strcpy(house_name, "Green Plaza");
         strcpy(house_owner, "Patrick");
 
         printf("\n\n______________________________________\n\n");
