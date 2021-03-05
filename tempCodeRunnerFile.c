@@ -1,1 +1,5 @@
-        printf("Information about %d\t staff", x + 1);
+    // while (!feof(f_pointer))
+    // {
+    //     fgets(singleline, 150, f_pointer);
+    //     puts(singleline);
+    // }
