@@ -2,24 +2,197 @@
 #include <stdio.h>
 
 /////////////////////// LOGICAL QUESTIONS ////////////////////
+
+int fact(int n);
 int main()
-//Fibonacci Series
 {
-    int i, n, a = 0, b = 1, c;
-    printf("Enter the numbers of N's?\n");
+    //// RECURSION FUNCTION
+
+    int n, result;
+    printf("Enter the value of N's?\n");
     scanf("%d", &n);
 
-    for (i = 1; i <= n; i++)
-    {
-        printf(" %d\n", a);
-
-        c = a + b;
-        a = b;
-        b = c;
-    }
+    result = fact(n);
+    printf("The Factorial of %d is %d", n, result);
 
     return 0;
 }
+int fact(int n)
+{
+    int res;
+    if (n == 0)
+    {
+        res = 1;
+    }
+    else
+    {
+        res = n * fact(n - 1);
+    }
+    return res;
+}
+// int main()
+// //ARMSTRONG NUMBER
+// {
+
+//     int n, remainder, sum = 0, cube, temp;
+
+//     printf("Enter N's value?");
+//     scanf("%d", &n);
+//     temp = n;
+//     while (n > 0)
+//     {
+//         remainder = n % 10;
+//         cube = remainder * remainder * remainder;
+//         sum += cube;
+//         n /= 10;
+//     }
+//     n = temp;
+//     if (sum == n)
+//     {
+//         printf("%d is Armstrong number.", n);
+//     }
+//     return 0;
+// }
+// int main()
+// //GETTING A RANGE OF PERFECT NUMBERS
+// {
+
+//     long long n, i, limits, sum;
+
+//     printf("Enter numbers limits?\n");
+//     scanf("%d", &limits);
+
+//     for (n = 1; n <= limits; n++)
+//     {
+
+//         sum = 0;
+//         for (i = 1; i < n; i++)
+//         {
+//             if (n % i == 0)
+//             {
+//                 sum += i;
+//             }
+//         }
+//         if (n == sum)
+//         {
+//             printf("%d,", sum);
+//         }
+//     }
+//     return 0;
+// }
+// int main()
+// //STRONG NUMBER
+// {
+//     int i, j, cur, lastDigit, end;
+//     long long fact, sum;
+
+//     /* Input upper limit from user */
+//     printf("Enter upper limit: ");
+//     scanf("%d", &end);
+
+//     printf("All Strong numbers between 1 to %d are:\n", end);
+
+//     /* Iterate from 1 to end */
+//     for (i = 1; i <= end; i++)
+//     {
+//         /* Number to check for strong number */
+//         cur = i;
+
+//         sum = 0;
+
+//         /* Find the sum of factorial of digits */
+//         while (cur > 0)
+//         {
+//             fact = 1ll;
+//             lastDigit = cur % 10;
+
+//             /* Find factorial of last digit of current num. */
+//             for (j = 1; j <= lastDigit; j++)
+//             {
+//                 fact = fact * j;
+//             }
+
+//             sum += fact;
+
+//             cur /= 10;
+//         }
+
+//         /* Print 'i' if it is strong number */
+//         if (sum == i)
+//         {
+//             printf("%d, ", i);
+//         }
+//     }
+
+//     return 0;
+// }
+// int main()
+// //PRIME NUMBER
+// {
+//     int i, n, count = 0;
+//     printf("Enter the numbers of N's?\n");
+//     scanf("%d", &n);
+
+//     for (i = 1; i <= n; i++)
+//     {
+//         if (n % i == 0)
+//         {
+//             count++;
+//         }
+//     }
+//     if (count == 2)
+//     {
+//         printf("It's a Prime number.");
+//     }
+//     else
+//     {
+//         printf("It's not a prime number.");
+//     }
+
+//     return 0;
+// }
+// int main()
+// //PALINDROME NUMBER
+// {
+//     int n, r, sum = 0, temp;
+//     printf("Enter the numbers of N's?\n");
+//     scanf("%d", &n);
+//     temp = n;
+//     while (n > 0)
+//     {
+//         r = n % 10;
+//         sum = sum * 10 + r;
+//         n = n / 10;
+//     }
+//     n = temp;
+//     if (n == sum)
+//     {
+//         printf("It's a Panlindrome number: %d", sum);
+//     }
+//     else
+//     {
+//         printf("It's not a palindrome number : %d", sum);
+//     }
+//     return 0;
+// }
+// int main()
+// //Fibonacci Series
+// {
+//     int i, n, a = 0, b = 1, c;
+//     printf("Enter the numbers of N's?\n");
+//     scanf("%d", &n);
+
+//     for (i = 1; i <= n; i++)
+//     {
+//         printf(" %d\n", a);
+
+//         c = a + b;
+//         a = b;
+//         b = c;
+//     }
+
+//     return 0;
+// }
 // int main()
 // //Sum of all the digits in a given number
 // {
