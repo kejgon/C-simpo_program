@@ -1,35 +1,138 @@
 #include <conio.h>
 #include <stdio.h>
 
-/////////////////////// LOGICAL QUESTIONS ////////////////////
-
-int fact(int n);
 int main()
 {
-    //// RECURSION FUNCTION
+    // INSERTING ELENENTS OF ONE ARRAY TO ANOTHER ARRAY
+    int a[6] = {12, 1, 14, 45, 65, 76}, b[3] = {100, 200, 300}, firstArr = 6, secArr = 3, loc;
 
-    int n, result;
-    printf("Enter the value of N's?\n");
-    scanf("%d", &n);
+    printf("Enter the location to insert?\n");
+    scanf("%d", &loc);
+    // SHIFTING ALL THE ELEMENTS OF THE ARRAY
+    for (int i = firstArr - 1; i >= loc; i--)
+    {
+        a[i + secArr] = a[i];
+    }
 
-    result = fact(n);
-    printf("The Factorial of %d is %d", n, result);
+    //INSERTING  ALL THE ELEMENTS OF SEC ARRAY INTO FIRST ARRAY
+    for (int i = 0; i < secArr; i++)
+    {
+        a[loc + i] = b[i];
+    }
 
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d, ", a[i]);
+    }
     return 0;
 }
-int fact(int n)
-{
-    int res;
-    if (n == 0)
-    {
-        res = 1;
-    }
-    else
-    {
-        res = n * fact(n - 1);
-    }
-    return res;
-}
+
+// int main()
+// //?? INSERTING INTO AN ARRAY AND CHANGING ARRAY ELEMENTS BASE ON THE INDEX LOCATION
+// {
+
+//     int arr[50], n, i, key, loc;
+
+//     printf("Enter the size of the array?\n");
+//     scanf("%d", &n);
+//     printf("Enter %d elements of N's.\n", n);
+//     for (i = 0; i < n; i++)
+//     {
+//         scanf("%d", &arr[i]);
+//     }
+//     printf("Array's Element are : \n");
+//     for (i = 0; i < n; i++)
+//     {
+//         printf("%d, ", arr[i]);
+//     }
+//     printf("\n");
+
+//     printf("Enter the new elements?\n");
+//     scanf("%d", &key);
+//     printf("Enter location you would like to store in.\n");
+//     scanf("%d", &loc);
+//     for (i = n - 1; i >= loc; i--)
+//     {
+//         arr[i + 1] = arr[i];
+//     }
+//     arr[loc] = key;
+
+//     printf("The new array is : \n");
+//     for (i = 0; i < n; i++)
+//     {
+//         printf("%d, ", arr[i]);
+//     }
+
+//     return 0;
+// }
+
+/////////////////////// LOGICAL QUESTIONS ////////////////////
+// /* C program to arrange numbers in descending order DescOrder.C */
+
+// void main()
+// {
+//     //variable declaration
+//     int number[30];
+//     int i, j, a, n;
+
+//     //asking user to enter size of array
+//     printf("Enter the value of N\n");
+//     scanf("%d", &n); //reading array size
+
+//     //asking user to enter array elements
+//     printf("Enter the numbers \n");
+//     for (i = 0; i < n; ++i)
+//         scanf("%d", &number[i]); //reading array elements
+
+//     /* Logic for sorting and checking */
+
+//     for (i = 0; i < n; ++i)
+//     {
+//         for (j = i + 1; j < n; ++j)
+//         {
+//             if (number[i] < number[j])
+//             {
+//                 a = number[i];
+//                 number[i] = number[j];
+//                 number[j] = a;
+//             }
+//         }
+//     }
+
+//     printf("The numbers arranged in descending order are given below\n");
+//     for (i = i; i > 0; i--)
+//     {
+//         printf("%d\n", number[i]); //printing numbers in descending order
+//     }
+// }
+
+// int fact(int n);
+// int main()
+// {
+//     //// RECURSION FUNCTION
+
+//     int n, result;
+//     printf("Enter the value of N's?\n");
+//     scanf("%d", &n);
+
+//     result = fact(n);
+//     printf("The Factorial of %d is %d", n, result);
+
+//     return 0;
+// }
+// int fact(int n)
+// {
+//     int res;
+//     if (n == 0)
+//     {
+//         res = 1;
+//     }
+//     else
+//     {
+//         res = n * fact(n - 1);
+//     }
+//     return res;
+// }
 // int main()
 // //ARMSTRONG NUMBER
 // {
