@@ -1,31 +1,78 @@
 #include <conio.h>
 #include <stdio.h>
 
+//////////////////? STRUCTURES ?//////////////
+struct emp
+{
+    //STRUCTURES WITH ARRAYS
+    int e_no;
+    char e_full_name[50];
+    float e_salary;
+};
 int main()
 {
-    // INSERTING ELENENTS OF ONE ARRAY TO ANOTHER ARRAY
-    int a[6] = {12, 1, 14, 45, 65, 76}, b[3] = {100, 200, 300}, firstArr = 6, secArr = 3, loc;
-
-    printf("Enter the location to insert?\n");
-    scanf("%d", &loc);
-    // SHIFTING ALL THE ELEMENTS OF THE ARRAY
-    for (int i = firstArr - 1; i >= loc; i--)
+    int n;
+    printf("Enter the number of employees you want to register.\n");
+    scanf("%d", &n);
+    struct emp e[n];
+    for (int i = 0; i < n; i++)
     {
-        a[i + secArr] = a[i];
+
+        printf("Enter employee Reg no.\n");
+        scanf("%d", &e[i].e_no);
+        printf("Enter employee Full name.\n");
+        scanf("%s", &e[i].e_full_name);
+        printf("Enter employee Salary.\n");
+        scanf("%f", &e[i].e_no);
     }
-
-    //INSERTING  ALL THE ELEMENTS OF SEC ARRAY INTO FIRST ARRAY
-    for (int i = 0; i < secArr; i++)
+    for (int j = 0; j < n; j++)
     {
-        a[loc + i] = b[i];
-    }
-
-    for (int i = 0; i < 10; i++)
-    {
-        printf("%d, ", a[i]);
+        printf("Employee Infos :\t Emp_No: %d\tEmp Full name: %s\tEmp Salary :%f\n", e[j].e_no, e[j].e_full_name, e[j].e_salary);
     }
     return 0;
 }
+// struct emp
+// {
+//     int e_no;
+//     char e_full_name[20];
+//     float e_salary;
+// };
+// int main()
+// {
+
+//     struct emp e = {1020276, "Kejgon James Laa", 10.9999};
+
+//     printf("The size of the Structure is : %d\n", sizeof(e));
+//     printf("Employee Infos :\t Emp_No: %d\tEmp Full name: %s\nEmp Salary :%lf", e.e_no, e.e_full_name, e.e_salary);
+
+//     return 0;
+// }
+
+// int main()
+// {
+//     // INSERTING ELENENTS OF ONE ARRAY TO ANOTHER ARRAY
+//     int a[6] = {12, 1, 14, 45, 65, 76}, b[3] = {100, 200, 300}, firstArr = 6, secArr = 3, loc;
+
+//     printf("Enter the location to insert?\n");
+//     scanf("%d", &loc);
+//     // SHIFTING ALL THE ELEMENTS OF THE ARRAY
+//     for (int i = firstArr - 1; i >= loc; i--)
+//     {
+//         a[i + secArr] = a[i];
+//     }
+
+//     //INSERTING  ALL THE ELEMENTS OF SEC ARRAY INTO FIRST ARRAY
+//     for (int i = 0; i < secArr; i++)
+//     {
+//         a[loc + i] = b[i];
+//     }
+
+//     for (int i = 0; i < 10; i++)
+//     {
+//         printf("%d, ", a[i]);
+//     }
+//     return 0;
+// }
 
 // int main()
 // //?? INSERTING INTO AN ARRAY AND CHANGING ARRAY ELEMENTS BASE ON THE INDEX LOCATION

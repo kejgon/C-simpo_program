@@ -4,15 +4,14 @@ int main()
 {
 
     int x, n;
+    //Declara neccesary arrays
+
     printf("\nHow many persons??\n");
     scanf("%d", &n);
-
-    //Declara neccesary arrays
-    int age[n][10];
-    float weight[n], height[n];
+    int age[n];
+    double weight[n], height[n];
 
     char name[n][50], gender[n][10];
-
     for (x = 0; x < n; x++)
     {
         printf("\nInformation person  %d infos: \n ", x + 1);
@@ -28,12 +27,13 @@ int main()
         printf("Enter the person gender?\n");
         scanf("%s", &gender[x]);
     }
+    printf("\tName\t|\tAge\t|\tHeight\t|\tWeight\t|\tGender\t|\n");
+    printf("_____________________________________________________\n");
+
     for (int k = 0; k < n; k++)
     {
 
-        printf("\tName\t|\tAge\t|\tHeight\t|\tWeight\t|\tGender\t|\n");
-        printf("_____________________________________________________\n");
-        printf("\t%s\t\t%d\t\t%lf\t\t%lf\t\t%s\t", name[k], age[k], height[k], weight[k], gender[k]);
+        printf("\t%s\t\t%d\t\t%.2lf\t\t%.2lf\t\t%s\t\n", name[k], age[k], height[k], weight[k], gender[k]);
     }
 
     return 0;
