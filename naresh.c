@@ -1,36 +1,71 @@
 #include <conio.h>
 #include <stdio.h>
 
-//////////////////? STRUCTURES ?//////////////
-struct emp
-{
-    //STRUCTURES WITH ARRAYS
-    int e_no;
-    char e_full_name[50];
-    float e_salary;
-};
+//////////////////? POINTERS ?//////////////
+// CALLED BY REFERENCE
+void SWAPPING(int *, int *);
 int main()
 {
-    int n;
-    printf("Enter the number of employees you want to register.\n");
-    scanf("%d", &n);
-    struct emp e[n];
-    for (int i = 0; i < n; i++)
-    {
+    int a = 10, b = 20;
 
-        printf("Enter employee Reg no.\n");
-        scanf("%d", &e[i].e_no);
-        printf("Enter employee Full name.\n");
-        scanf("%s", &e[i].e_full_name);
-        printf("Enter employee Salary.\n");
-        scanf("%f", &e[i].e_no);
-    }
-    for (int j = 0; j < n; j++)
-    {
-        printf("Employee Infos :\t Emp_No: %d\tEmp Full name: %s\tEmp Salary :%f\n", e[j].e_no, e[j].e_full_name, e[j].e_salary);
-    }
-    return 0;
+    printf("Value before SWAPPING , A : %d, B: %d\n", a, b);
+    SWAPPING(&a, &b);
+    printf("Values  of => A : %d, B: %d", a, b);
 }
+void SWAPPING(int *x, int *y)
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+    printf("Value after SWAPPING FUNCTION, A : %d, B: %d\n", *x, *y);
+}
+// // CALLED BY VALUE
+// void SWAPPING(int, int);
+// int main()
+// {
+//     int a = 10, b = 20;
+
+//     printf("Value before SWAPPING , A : %d, B: %d\n", a, b);
+//     SWAPPING(a, b);
+// }
+// void SWAPPING(int x, int y)
+// {
+//     int temp = x;
+//     x = y;
+//     y = temp;
+//     printf("Value before SWAPPING , A : %d, B: %d", x, y);
+// }
+
+// //////////////////? STRUCTURES ?//////////////
+// struct emp
+// {
+//     //STRUCTURES WITH ARRAYS
+//     int e_no;
+//     char e_full_name[50];
+//     float e_salary;
+// };
+// int main()
+// {
+//     int n;
+//     printf("Enter the number of employees you want to register.\n");
+//     scanf("%d", &n);
+//     struct emp e[n];
+//     for (int i = 0; i < n; i++)
+//     {
+
+//         printf("Enter employee Reg no.\n");
+//         scanf("%d", &e[i].e_no);
+//         printf("Enter employee Full name.\n");
+//         scanf("%s", &e[i].e_full_name);
+//         printf("Enter employee Salary.\n");
+//         scanf("%f", &e[i].e_no);
+//     }
+//     for (int j = 0; j < n; j++)
+//     {
+//         printf("Employee Infos :\t Emp_No: %d\tEmp Full name: %s\tEmp Salary :%f\n", e[j].e_no, e[j].e_full_name, e[j].e_salary);
+//     }
+//     return 0;
+// }
 // struct emp
 // {
 //     int e_no;
