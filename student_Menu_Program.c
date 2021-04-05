@@ -15,7 +15,6 @@ int main()
     char unit_name[n][10], unit_code[n][10], grade[n], remarks[n][50];
 
     int key;
-    printf("Enter");
     do
     {
         printf("Welcome to Sunshine our Academic Management System (AMS)\n");

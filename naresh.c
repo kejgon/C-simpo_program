@@ -1,24 +1,98 @@
 #include <conio.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-//////////////////? POINTERS ?//////////////
-// CALLED BY REFERENCE
-void SWAPPING(int *, int *);
-int main()
+// //////////////////? FILES ?//////////////
+void main()
 {
-    int a = 10, b = 20;
+    FILE *file = fopen("text.txt", "r");
+    if (file == NULL)
+    {
+        printf("File not found\n");
+    }
+    else
+    {
+        int ch;
+        while ((ch = fgetc(file)) != EOF)
+        {
+            printf("%c", ch);
+        }
+    }
+}
+// // //////////////////? DMA ?//////////////
+// void main()
+// {
+//     int n, *arr;
 
-    printf("Value before SWAPPING , A : %d, B: %d\n", a, b);
-    SWAPPING(&a, &b);
-    printf("Values  of => A : %d, B: %d", a, b);
-}
-void SWAPPING(int *x, int *y)
-{
-    int temp = *x;
-    *x = *y;
-    *y = temp;
-    printf("Value after SWAPPING FUNCTION, A : %d, B: %d\n", *x, *y);
-}
+//     printf("Enter the N's size.\n");
+//     scanf("%d", &n);
+//     arr = (int *)calloc(n, sizeof(int));
+//     if (arr == NULL)
+//     {
+//         printf("No memory error.\n");
+//     }
+//     else
+//     {
+
+//         printf("ARRAY ELEMENTS.\n");
+//         for (int i = 0; i < n; i++)
+//         {
+//             printf("%d\t", *(arr + i));
+//         }
+//         // printf("Enter %d elements\n", n);
+//         // for(int i=0; i< n; i++){
+//         //   scanf("%d\n", &*(arr+i));
+//         // }
+//         //  printf("ARRAY ELEMENTS.\n");
+//         //  for(int i=0; i< n; i++){
+//         //   printf("%d\t", *(arr+i));
+//         // }
+//     }
+// }
+
+// //////////////////? DMA ?//////////////
+// struct Emp
+// {
+//     int emp_No;
+//     char emp_Name[20];
+//     double emp_Salary;
+// };
+
+// void main()
+// {
+//     struct Emp *ptr;
+//     ptr = (struct Emp *)malloc(sizeof(struct Emp));
+
+//     if (ptr == NULL)
+//     {
+//         printf("Out of Memory error.\n");
+//     }
+//     else
+//     {
+//         printf("Enter Employee's Details :\n");
+//         scanf("%d\n%s\n%d", &ptr->emp_No, ptr->emp_Name, &ptr->emp_Salary);
+//     }
+//     printf("EMP_NO : %d\nEMP_NAME : %s\nEMP_SALARY : %d", ptr->emp_No, ptr->emp_Name, ptr->emp_Salary);
+// }
+
+// //////////////////? POINTERS ?//////////////
+// // // CALLED BY REFERENCE
+// void SWAPPING(int *, int *);
+// int main()
+// {
+//     int a = 10, b = 20;
+
+//     printf("Value before SWAPPING , A : %d, B: %d\n", a, b);
+//     SWAPPING(&a, &b);
+//     printf("Values  of => A : %d, B: %d", a, b);
+// }
+// void SWAPPING(int *x, int *y)
+// {
+//     int temp = *x;
+//     *x = *y;
+//     *y = temp;
+//     printf("Value after SWAPPING FUNCTION, A : %d, B: %d\n", *x, *y);
+// }
 // // CALLED BY VALUE
 // void SWAPPING(int, int);
 // int main()
